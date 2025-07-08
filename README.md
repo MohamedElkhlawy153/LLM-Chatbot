@@ -1,6 +1,8 @@
 LLM Chatbot Project
 Overview
 This project is a simple chatbot built using the Groq API, featuring a FastAPI backend and a Streamlit frontend. It supports conversation history, token usage display, execution time tracking, and is fully containerized with Docker for easy local deployment. The chatbot intelligently responds in the same language as the input query (Arabic or English), making it versatile for multilingual use.
+
+
 Project Structure
 /chatbot
 ├── backend/
@@ -15,24 +17,29 @@ Project Structure
 ├── docker-compose.yml # Configuration for running multiple Docker containers
 └── README.md # Project documentation
 
+
 Prerequisites
 
 Python 3.9+ (for non-Docker setup)
 Docker and Docker Compose (for containerized deployment)
 A Groq API key (obtain one at Groq Console)
 
+
 Setup Instructions
 Clone the Repository
 git clone https://github.com/your-username/LLM-Chatbot.git
 cd LLM-Chatbot
+
 
 Configure Environment Variables
 Create a .env file in the backend/ directory with the following content:
 GROQ_API_KEY=your_groq_api_key_here
 GROQ_API_URL=https://api.groq.com/openai/v1/chat/completions
 
+
 Replace your_groq_api_key_here with your actual Groq API key.
 Do not commit the .env file to Git (it is ignored via .gitignore).
+
 
 Non-Docker Setup (Optional)
 
