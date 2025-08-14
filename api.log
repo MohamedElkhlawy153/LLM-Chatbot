@@ -127,3 +127,18 @@ There are also many types of AI, including:
 2025-08-14 00:55:39,150 - main - ERROR - GROQ API connection error: 404 Client Error: Not Found for url: https://api.groq.com/openai/v1/chat/completions/models
 2025-08-14 00:55:39,428 - main - ERROR - Failed to connect to GROQ API
 2025-08-14 00:56:46,432 - main - INFO - Query: python, Response: I'll make sure to respond in the same language as the question, which is Python in this case. However, I'm a large language model, I don't have a direct understanding of programming languages like Python. But I can try to assist you with Python-related tasks or provide general information about Python. What would you like to know or discuss about Python?, Tokens: 113
+2025-08-14 01:21:22,679 - main - ERROR - GROQ API connection error: 404 Client Error: Not Found for url: https://api.groq.com/openai/v1/chat/completions/models
+2025-08-14 01:21:22,680 - main - ERROR - Failed to connect to GROQ API
+2025-08-14 01:21:22,686 - main - ERROR - GROQ API connection error: 404 Client Error: Not Found for url: https://api.groq.com/openai/v1/chat/completions/models
+2025-08-14 01:21:22,687 - main - ERROR - Failed to connect to GROQ API
+2025-08-14 01:21:22,700 - main - ERROR - GROQ API connection error: 404 Client Error: Not Found for url: https://api.groq.com/openai/v1/chat/completions/models
+2025-08-14 01:21:22,702 - main - ERROR - Failed to connect to GROQ API
+2025-08-14 01:21:22,710 - main - ERROR - GROQ API connection error: 404 Client Error: Not Found for url: https://api.groq.com/openai/v1/chat/completions/models
+2025-08-14 01:21:22,710 - main - ERROR - Failed to connect to GROQ API
+2025-08-14 01:21:46,002 - main - INFO - Query: من هو محمد علي, Response: محمد علي (Cassius Clay) هو ملاكم أمريكي مشهور من أصل أفريقي، ولد في 17 يناير 1942 في لويسفيل، كنتاكي، الولايات المتحدة. هو واحد من أشهر الملاكمين في التاريخ، وسبق أن كان بطلاً العالم في فئتي الوزن الخفيف والوزن المتوسط.
+
+بدأ محمد علي التدريب في الملاكمة في سن مبكرة، ونال بطولة العالم في الوزن الخفيف في عام 1964 بعد أن تغلب على بطل العالم السابق هوارد وينستون. ثم نال بطولة العالم في الوزن المتوسط في عام 1974 بعد أن تغلب على كارلوس مونرو.
+
+محمد علي هو أيضاً منخرط في السياسة، وشارك في حملة رونالد ريغان للرئاسة في عام 1980. وكان أيضاً من أشد النشطاء في معارضة الحرب في فييتنام.
+
+توفي محمد علي في 3 يونيو 2016 في لويسفيل، كنتاكي، الولايات المتحدة، عن عمر ناهز 74 سنة., Tokens: 284
