@@ -112,3 +112,18 @@ There are also many types of AI, including:
 1. Narrow or Weak AI: AI designed to perform a specific task, such as recognizing faces or translating languages.
 2. General or Strong AI: AI that can perform any intellectual task that a human can, such as understanding and generating human language.
 3. Superintelligence: AI that is significantly more intelligent than the best human minds.
+2025-07-10 23:40:59,857 - backend.main - ERROR - Error processing query: Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-07-10 23:52:54,042 - backend.main - ERROR - Error: Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-07-11 00:05:13,809 - backend.main - ERROR - Error processing query: Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-07-11 00:08:47,110 - backend.main - ERROR - Error processing query: Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-07-11 00:13:05,450 - backend.main - ERROR - Error processing query: Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-07-11 00:17:41,649 - backend.main - ERROR - Error processing query: Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-08-14 00:55:39,139 - main - ERROR - GROQ API connection error: 404 Client Error: Not Found for url: https://api.groq.com/openai/v1/chat/completions/models
+2025-08-14 00:55:39,140 - main - ERROR - Failed to connect to GROQ API
+2025-08-14 00:55:39,141 - main - ERROR - GROQ API connection error: 404 Client Error: Not Found for url: https://api.groq.com/openai/v1/chat/completions/models
+2025-08-14 00:55:39,142 - main - ERROR - Failed to connect to GROQ API
+2025-08-14 00:55:39,144 - main - ERROR - GROQ API connection error: 404 Client Error: Not Found for url: https://api.groq.com/openai/v1/chat/completions/models
+2025-08-14 00:55:39,145 - main - ERROR - Failed to connect to GROQ API
+2025-08-14 00:55:39,150 - main - ERROR - GROQ API connection error: 404 Client Error: Not Found for url: https://api.groq.com/openai/v1/chat/completions/models
+2025-08-14 00:55:39,428 - main - ERROR - Failed to connect to GROQ API
+2025-08-14 00:56:46,432 - main - INFO - Query: python, Response: I'll make sure to respond in the same language as the question, which is Python in this case. However, I'm a large language model, I don't have a direct understanding of programming languages like Python. But I can try to assist you with Python-related tasks or provide general information about Python. What would you like to know or discuss about Python?, Tokens: 113

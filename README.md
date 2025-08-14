@@ -1,93 +1,146 @@
-LLM Chatbot Project
-Overview
-This project is a simple chatbot built using the Groq API, featuring a FastAPI backend and a Streamlit frontend. It supports conversation history, token usage display, execution time tracking, and is fully containerized with Docker for easy local deployment. The chatbot intelligently responds in the same language as the input query (Arabic or English), making it versatile for multilingual use.
-Project Structure
-/chatbot
+# LLM Chatbot Project
+
+A smart chatbot project built using **Groq API**, consisting of a **FastAPI** backend and a **Streamlit** frontend. The project supports conversation history, token usage display, execution time tracking, and is fully containerized with **Docker** for easy local deployment. The chatbot intelligently responds in the same language as the input query (Arabic or English), making it multilingual.
+
+## Project Structure
+
+```
+/
 ├── backend/
-│ └── app.py # FastAPI backend handling Groq API requests and logging
-│ └── .env # Environment variables (not committed to Git)
+│   ├── main.py             # FastAPI backend for handling Groq API requests and logging
+│   ├── Dockerfile          # Docker image build configuration for the backend
+│   ├── requirements.txt    # List of Python requirements for the backend
+│   └── env.example         # Environment variables template (must be copied to .env)
 ├── frontend/
-│ └── ui.py # Streamlit frontend with chat interface and analytics
-├── requirements.txt # List of Python dependencies
-├── .gitignore # Files to exclude from Git (e.g., .env, logs)
-├── api.log # Log file for API requests and responses (not committed)
-├── Dockerfile # Configuration for building the Docker image
-├── docker-compose.yml # Configuration for running multiple Docker containers
-└── README.md # Project documentation
+│   ├── ui.py               # Streamlit frontend with chat interface and analytics
+│   ├── Dockerfile          # Docker image build configuration for the frontend
+│   └── requirements.txt    # List of Python requirements for the frontend
+├── .gitignore              # Files excluded from Git (e.g., .env and logs)
+├── api.log                 # Log file for API requests and responses (not included in Git)
+├── docker-compose.yml      # Configuration for running multiple Docker containers
+└── README.md               # Project documentation
+```
 
-Prerequisites
+## Prerequisites
 
-Python 3.9+ (for non-Docker setup)
-Docker and Docker Compose (for containerized deployment)
-A Groq API key (obtain one at Groq Console)
+- **Python 3.9+** (for non-Docker setup)
+- **Docker and Docker Compose** (for containerized deployment)
+- **Groq API key** (obtain one from [Groq Console](https://console.groq.com))
 
-Setup Instructions
-Clone the Repository
+## Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/your-username/LLM-Chatbot.git
 cd LLM-Chatbot
+```
 
-Configure Environment Variables
-Create a .env file in the backend/ directory with the following content:
+### 2. Configure Environment Variables
+
+Create a `.env` file in the `backend/` directory with the following content:
+
+```bash
 GROQ_API_KEY=your_groq_api_key_here
 GROQ_API_URL=https://api.groq.com/openai/v1/chat/completions
+```
 
-Replace your_groq_api_key_here with your actual Groq API key.
-Do not commit the .env file to Git (it is ignored via .gitignore).
+- Replace `your_groq_api_key_here` with your actual Groq API key.
+- **Important:** Do not commit the `.env` file to Git (it is ignored via `.gitignore`).
 
-Non-Docker Setup (Optional)
+### 3. Non-Docker Setup (Optional)
 
-Create a virtual environment:python -m venv venv
+1. Create a virtual environment:
 
-Activate the virtual environment:
-Linux/Mac: source venv/bin/activate
-Windows: venv\Scripts\activate
+   ```bash
+   python -m venv venv
+   ```
 
-Install dependencies:pip install -r requirements.txt
+2. Activate the virtual environment:
 
-Run the backend:uvicorn backend.app:app --host 0.0.0.0 --port 8000
+   - **Linux/Mac**:
+     ```bash
+     source venv/bin/activate
+     ```
+   - **Windows**:
+     ```bash
+     venv\Scripts\activate
+     ```
 
-Run the frontend (in a separate terminal):streamlit run frontend/ui.py
+3. Install dependencies:
 
-Docker Setup (Recommended)
+   ```bash
+   pip install -r backend/requirements.txt
+   pip install -r frontend/requirements.txt
+   ```
 
-Ensure Docker and Docker Compose are installed and running.
-Build and run the application with a single command:docker-compose up --build
+4. Run the backend:
 
-This creates two containers: one for the backend (port 8000) and one for the frontend (port 8501).
+   ```bash
+   uvicorn backend.main:app --host 0.0.0.0 --port 8000
+   ```
 
-Access
+5. Run the frontend (in a separate terminal):
 
-Backend API: http://localhost:8000/docs (Swagger UI for API documentation)
-Frontend UI: http://localhost:8501 (Interactive Streamlit interface)
+   ```bash
+   streamlit run frontend/ui.py
+   ```
 
-Features
+### 4. Docker Setup (Recommended)
 
-Backend:
-Built with FastAPI for robust API handling.
-Integrates with Groq API for chatbot responses.
-Uses Pydantic for input validation.
-Logs requests and responses to api.log.
+1. Ensure **Docker** and **Docker Compose** are installed and running.
+2. Build and run the application with a single command:
 
-Frontend:
-Built with Streamlit for a user-friendly chat interface.
-Displays conversation history, token usage, and execution time.
-Styled for an enhanced user experience.
+   ```bash
+   docker-compose up --build
+   ```
 
-Deployment:
-Fully containerized with Docker and Docker Compose.
-Supports easy local deployment.
+   This creates two containers:
 
-Language Support:
-Automatically responds in the same language as the input (Arabic or English).
+   - Backend (port `8000`)
+   - Frontend (port `8501`)
 
-Challenges
+## Access
 
-Groq API Connectivity: Managing rate limits and ensuring stable API responses.
-Docker Networking: Configuring communication between frontend and backend containers.
-UI Styling: Enhancing the Streamlit interface for better usability and aesthetics.
+- **Backend API**: [http://localhost:8000/docs](http://localhost:8000/docs) (Swagger UI for API documentation)
+- **Frontend UI**: [http://localhost:8501](http://localhost:8501) (Interactive Streamlit interface)
 
-Future Improvements
+## Features
 
-Add SQLite database for persistent conversation history.
-Implement retry logic for handling API failures.
-Enhance the UI with interactive features (e.g., theme switching, advanced analytics).
+- **Backend**:
+
+  - Built with **FastAPI** for robust API handling.
+  - Integrates with **Groq API** for chatbot responses.
+  - Uses **Pydantic** for input validation.
+  - Logs requests and responses to `api.log`.
+
+- **Frontend**:
+
+  - Built with **Streamlit** for a user-friendly chat interface.
+  - Displays conversation history, token usage, and execution time.
+  - Styled for an enhanced user experience.
+
+- **Deployment**:
+
+  - Fully containerized with **Docker** and **Docker Compose**.
+  - Supports easy local deployment.
+
+- **Language Support**:
+  - Automatically responds in the same language as the input (Arabic or English).
+
+## Challenges
+
+- **Groq API Connectivity**: Managing rate limits and ensuring stable API responses.
+- **Docker Networking**: Configuring communication between frontend and backend containers.
+- **UI Styling**: Enhancing the Streamlit interface for better usability and aesthetics.
+
+## Future Improvements
+
+- Add **SQLite database** for persistent conversation history.
+- Implement **retry logic** for handling API failures.
+- Enhance the UI with interactive features (e.g., theme switching, advanced analytics).
+- Improve error handling and add unit tests to ensure application stability.
+
+```
+
+```

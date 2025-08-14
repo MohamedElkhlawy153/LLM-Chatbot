@@ -1,37 +1,31 @@
-version: '3.8'
-
 services:
   backend:
-    build: .
-    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
-    volumes:
-      - .:/app
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    environment:
-      - PYTHONUNBUFFERED=1
-      - GROQ_API_KEY=${GROQ_API_KEY}
-      - GROQ_API_URL=${GROQ_API_URL}
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app/backend
+      - ./api.log:/app/api.log
     networks:
-      - chatbot-network
-    restart: unless-stopped
+      - app-network
 
   frontend:
-    build: .
-    command: streamlit run frontend/ui.py --server.port 8501 --server.address 0.0.0.0
-    volumes:
-      - .:/app
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
-      - "8501:8501"
-    environment:
-      - PYTHONUNBUFFERED=1
-      - API_URL=http://backend:8000
+      - "8501:8501"  
+    volumes:
+      - ./frontend:/app/frontend
     depends_on:
       - backend
     networks:
-      - chatbot-network
-    restart: unless-stopped
+      - app-network
 
 networks:
-  chatbot-network:
+  app-network:
     driver: bridge
